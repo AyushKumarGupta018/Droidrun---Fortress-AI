@@ -18,36 +18,7 @@ class SecurityReport(BaseModel):
     apps: List[AppAudit] = Field(description="List of all allowed apps found")
     summary: str = Field(description="Overall safety conclusion")
 
-# AUDIT_GOALS = {
-#     "camera": """Act as Fortress AI Auditor. 
-#     1. SEARCH: Open Settings, search for 'Permission manager' and open it.
-#     2. AUDIT: Select 'Camera'. Categorize ONLY the apps in the 'Allowed' list:
-#        - Apps in 'Allowed all the time' -> State: 'Always', Risk: 'Risky'.
-#        - Apps in 'Allowed only while in use' -> State: 'While using app', Risk: 'Normal'.
-#        - Apps in 'Ask every time' -> State: 'Ask every time', Risk: 'Safe'.
-#     3. FINISH: Use open_app("droidsecurity") to jump back instantly. 
-#     4. DATA: Use complete() and in the reason, list 'Findings:' followed by the app list and their states.
-#     5. SAFETY: Do NOT change any settings and do NOT click buttons in droidsecurity.""",
 
-#     "microphone": """Act as Fortress AI Auditor. 
-#     1. SEARCH: Open Settings, search for 'Permission manager' and open it.
-#     2. AUDIT: Select 'Microphone'. Categorize ONLY the apps in the 'Allowed' list:
-#        - Apps in 'Allowed all the time' -> State: 'Always', Risk: 'Risky'.
-#        - Apps in 'Allowed only while in use' -> State: 'While using app', Risk: 'Normal'.
-#        - Apps in 'Ask every time' -> State: 'Ask every time', Risk: 'Safe'.
-#     3. FINISH: Use open_app("droidsecurity") to jump back instantly. 
-#     4. DATA: Use complete() with 'Findings:' in the reason.
-#     5. SAFETY: Do NOT change any settings.""",
-
-#      "location": "Act as Fortress AI. Search Settings for 'Permission manager' Tap result, open permission manager(control app access to your data) and select 'Location'. Audit allowed apps (Always/While in use/Ask). Return via open_app('droidsecurity') and list Findings in the final reason.",
-
-#     "sms": """Act as Fortress AI Auditor. 
-#     1. SEARCH: Open Settings, search for 'Permission manager' and open it.
-#     2. AUDIT: Select 'SMS'. Review apps in the 'Allowed' list. 
-#     3. FINISH: Use open_app("droidsecurity") to jump back instantly. 
-#     4. DATA: Use complete() with 'Findings:' in the reason.
-#     5. SAFETY: Do NOT change any settings."""
-# }
 AUDIT_GOALS = {
     "camera": """Act as Fortress AI Security Auditor.
     1. NAVIGATE: Open Settings. Use the search bar to find and enter 'Permission manager'.
